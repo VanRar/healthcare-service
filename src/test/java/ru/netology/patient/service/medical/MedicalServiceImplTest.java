@@ -94,6 +94,7 @@ class MedicalServiceImplTest {
         Assertions.assertEquals("Warning, patient with id: 123456789, need help", argumentCaptor.getValue());
 
     }
+
     @Test
     void checkTemperatureNormal2() {
 
@@ -112,7 +113,6 @@ class MedicalServiceImplTest {
                 .thenReturn(patientInfo);
 
         SendAlertService alertService = Mockito.mock(SendAlertService.class);
-        ArgumentCaptor<String> argumentCaptor = ArgumentCaptor.forClass(String.class);
 
         MedicalServiceImpl medicalService = new MedicalServiceImpl(patientInfoRepository, alertService);
 
